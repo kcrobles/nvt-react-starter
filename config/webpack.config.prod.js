@@ -42,14 +42,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.scss$/,
+        test: /.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              camelCase: 'dashes'
+              camelCase: 'dashes',
+              localIdentName: '[path][name]__[local]--[hash:base64:5]'
             }
           },
           {

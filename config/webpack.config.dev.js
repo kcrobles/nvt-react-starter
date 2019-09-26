@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
@@ -43,11 +44,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.scss$/,
+        test: /.s?css$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -78,8 +77,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: '../node_modules/html-webpack-template/index.ejs',
-      title: 'Webpack 4 Demo',
-      //   favicon: '../src/favicon.ico',
+      title: 'RE',
       meta: [
         {
           name: 'robots',

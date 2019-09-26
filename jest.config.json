@@ -3,10 +3,9 @@
   "verbose": true,
   "bail": 5,
   "testPathIgnorePatterns": [
-    "/node_modules/",
+    "<rootDir>/node_modules/",
     "<rootDir>/out/",
     "<rootDir>/build/",
-    "<rootDir>/dist/",
     "<rootDir>/dist/",
     "<rootDir>/stories/",
     "<rootDir>/config/",
